@@ -1,0 +1,30 @@
+# GitFuzzer Configuration
+# Copy this file to config.yml and customize
+
+# GitHub Settings
+github:
+  token: ""  # Your GitHub personal access token
+  
+# Search Settings  
+search:
+  keywords: 5       # Number of keywords to generate per search
+  days: 30         # Only search repos updated in last N days
+  min_stars: 0     # Minimum stars filter
+  max_repos: 50    # Maximum repositories to analyze per search
+
+# Telegram Reporting (optional)
+telegram:
+  token: ""        # Bot token from @BotFather
+  chat_id: ""      # Chat ID to send reports to
+  enabled: false   # Enable/disable Telegram reporting
+
+# Analysis Settings
+analysis:
+  scan_mode: "standard"  # "standard" or "deep"
+  secret_patterns: true  # Enable secret detection
+  relationship_discovery: true  # Enable relationship discovery
+
+# Rate Limiting
+rate_limit:
+  github_requests_per_hour: 5000  # GitHub API rate limit
+  delay_between_repos: 1          # Seconds between repository scans

@@ -1,0 +1,1 @@
+{"timestamp": "2025-07-19T01:22:34.387456", "level": "ERROR", "logger": "gitfuzzer.cli", "message": "Repository scanning failed: Configuration issues:\n- No GitHub tokens configured (set GH_TOKENS environment variable)\n- Telegram enabled but TG_BOT_TOKEN not configured\n- Telegram enabled but TG_CHAT_ID not configured", "module": "cli", "function": "run", "line": 308}
