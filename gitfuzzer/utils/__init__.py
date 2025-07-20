@@ -30,19 +30,19 @@ async def async_retry(
 ) -> Any:
     """Async retry wrapper with exponential backoff."""
     last_exception = None
-    
+
     for attempt in range(max_retries + 1):
         try:
             return await func(*args, **kwargs)
         except Exception as e:
             last_exception = e
-            
+
             if attempt == max_retries:
                 break
-                
+
             delay = base_delay * (backoff_multiplier ** attempt)
             jittered_delay = delay + (delay * 0.1 * random.random())
-            
+
             await asyncio.sleep(jittered_delay)
-    
+
     raise last_exception
